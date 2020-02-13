@@ -7,9 +7,9 @@ FactoryBot.define do
     user { FactoryBot.create(:user) }
     complete { false }
     feedback { false }
-    original { LiterateRandomizer.sentence }
+    original { }
     translated {}
-    comprehanded {}
+    comprehended {}
     user_intention {}
     user_intention_translated {}
   end

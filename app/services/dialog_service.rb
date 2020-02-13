@@ -3,14 +3,14 @@ class DialogService
   # Dialog 생성
   def self.create_dialog(target:, source:, user:)
     question = Question.all.sample
-    Dialog.create!(user: user, target: target, source: source, question: question)
+    dialog = Dialog.create!(user: user, target: target.to_i, source: source.to_i, question: question)
+    dialog
   end
 
   # Dialog 업데이트
-  def self.update_dialog(dialog, original: nil, feedback: nil,  user_intention: nil, complete: nil)
+  def self.update_dialog(dialog, original: nil, feedback: nil, user_intention: nil, complete: nil)
     source = dialog.source # ko
     target = dialog.target # en -> 사용자의 입력 언어
-
     update_params =
       # 사용자의 입력을 받아 번역과 예상 의도를 업데이트
       if original.present?
