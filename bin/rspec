@@ -1,4 +1,12 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
+
+
+def system!(*args)
+  system(*args) || abort("\n== Command #{args} failed ==")
+end
+
+system!('rails db:migrate RAILS_ENV=test') 
+
 load Gem.bin_path('rspec-core', 'rspec')

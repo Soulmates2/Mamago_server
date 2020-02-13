@@ -40,3 +40,8 @@ How To Deploy ( with Heroku )
 - run 'heroku container:push web'
 - run 'heroku container:release web'
 - Done! your server is deployed.
+
+How To TEST
+
+- use rspec
+- use 'bin/rspec' or 'rails db:migrate RAIL_ENV=test; rspec'
